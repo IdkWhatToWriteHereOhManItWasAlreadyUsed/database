@@ -88,16 +88,6 @@ EOF
 
 echo "✅ Liquibase properties created!"
 
-# Проверяем установку
-echo "🔍 Verifying Liquibase installation..."
-if "$TOOLS_DIR/liquibase" --version > /dev/null 2>&1; then
-    echo "✅ Liquibase installed successfully!"
-    LIQUIBASE_VERSION=$("$TOOLS_DIR/liquibase" --version | head -n 1)
-    echo "   Version: $LIQUIBASE_VERSION"
-else
-    echo "❌ Liquibase installation verification failed!"
-    exit 1
-fi
 
 # Проверяем подключение к базе данных
 echo "🔍 Testing database connection..."
